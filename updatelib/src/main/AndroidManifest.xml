@@ -1,0 +1,36 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.xiaoluo.updatelib">
+
+    <uses-permission android:name="android.permission.INTERNET"/><!--用于访问网络-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/><!--写入外部存储-->
+    <!--<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />-->
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <receiver
+            android:name=".UpdateReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+            </intent-filter>
+        </receiver>
+
+        <!--android 7.0适配-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.xiaoluo.updatelib.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
