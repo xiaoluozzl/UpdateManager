@@ -70,7 +70,7 @@ public class UpdateReceiver extends BroadcastReceiver {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            uri = FileProvider.getUriForFile(context, "com.xiaoluo.updatelib.fileprovider",
+            uri = FileProvider.getUriForFile(context, context.getPackageName() + ".fileprovider",
                     new File(UpdateManager.mApkPath));
         } else {
             uri = Uri.fromFile(new File(UpdateManager.mApkPath));

@@ -36,7 +36,7 @@ publish {
     userOrg = 'xiaoluozzl'//bintray.com用户名
     groupId = 'cn.xiaoluo'//jcenter上的路径
     artifactId = 'update-manager'//项目名称
-    publishVersion = '1.1.0'//版本号
+    publishVersion = '1.2.0'//版本号
     desc = 'tool for update '//描述
     website = 'https://github.com/xiaoluozzl/UpdateManager'
 }
