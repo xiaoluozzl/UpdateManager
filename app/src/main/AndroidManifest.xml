@@ -21,16 +21,6 @@
         </activity>
 
         <!-- update -->
-        <receiver
-            android:name="com.xiaoluo.updatelib.UpdateReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
-            </intent-filter>
-        </receiver>
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.xiaoluo.update.fileprovider"

@@ -4,18 +4,8 @@
 ```
 compile 'cn.xiaoluo:update-manager:1.2.0'
 ```
-- 2.AndroidManifest里进行注册Receiver和FileProvider，Receiver不修改，FileProvider需要把android:authorities中的[包名]替换成应用包名
+- 2.如果适配7.0, 需要在AndroidManifest里注册FileProvider，把android:authorities中的[包名]替换成应用包名
 ```
-        <receiver
-            android:name="com.xiaoluo.updatelib.UpdateReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
-            </intent-filter>
-        </receiver>
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="[包名].fileprovider"
